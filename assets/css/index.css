@@ -118,6 +118,7 @@ button {
 }
 
 button:hover {
+    background-color: rgb(18, 136, 32);
     filter: invert(100%)
 }
 
