@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <div class="container">
+        <div class="output">
+            <div name="password" id="password" data-placeholder="true">P4$5W0rD!</div>
+            <img src="./assets/images/copy-text.svg" alt="Copy" id="copy" data-disabled="true">
+            <p id="popup">Copied to clipboard</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="length">Password Length</label>
+                <p type="number" id="lengthValue">10</p>
+                <input type="range" name="length" id="length" min="10" max="64" value="10" />
+            </div>
+            <input type="checkbox" name="upperCase" id="hasUpperCase">
+            <label for="hasUpperCase">Include Uppercase Letters</label>
+            <input type="checkbox" name="lowerCase" id="hasLowerCase">
+            <label for="hasLowerCase">Include Lowercase Letters</label>
+            <input type="checkbox" name="numbers" id="hasNumbers">
+            <label for="hasNumbers">Include Numbers</label>
+            <input type="checkbox" name="special" id="hasSpecial">
+            <label for="hasSpecial">Include Symbols</label>
+            <button>Generate
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 -3 24 24">
+                    <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+    
+    <script src="./assets/scripts/index.js"></script>
+</body>
+</html>
