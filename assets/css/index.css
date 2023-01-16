@@ -114,11 +114,10 @@ button {
     vertical-align: middle;
     cursor: pointer;
     font-weight: 900;
+    color: black;
 }
 
 button:hover {
-    background-color: rgb(18, 136, 32);
-    /* color: white; */
     filter: invert(100%)
 }
 
