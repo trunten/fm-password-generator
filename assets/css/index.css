@@ -105,7 +105,8 @@ img[data-disabled="false"] {
     filter: invert(91%) sepia(17%) saturate(915%) hue-rotate(63deg) brightness(101%) contrast(101%);
 }
 
-button {
+button, button:active {
+    appearance: none;
     min-height: 2.8rem;
     text-transform: uppercase;
     border: none;
@@ -118,6 +119,7 @@ button {
 }
 
 button:hover {
+    appearance: none;
     background-color: rgb(18, 136, 32);
     filter: invert(100%)
 }
