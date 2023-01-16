@@ -75,7 +75,6 @@ input[type="range"]::-webkit-slider-thumb {
     border: none;
     color: rgb(164 255 175);
     background: rgb(36 35 43);
-    /* text-align: right; */
     font-size: 1.5rem;
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     min-width: 50px;
@@ -118,10 +117,12 @@ button, button:active {
     color: black;
 }
 
-button:hover {
-    appearance: none;
-    background-color: rgb(18, 136, 32);
-    filter: invert(100%)
+@media (hover: hover) {
+    button:hover {
+        appearance: none;
+        background-color: rgb(18, 136, 32);
+        filter: invert(100%)
+    }
 }
 
 h1 {
