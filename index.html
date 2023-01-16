@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Password Generator</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <meta name="description" content="Generate your own, customizable, random password">
+    <link rel="icon" type="image/png" sizes="50x50" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- Meta tags for link previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://trunten.github.io/fm-password-generator" />
+    <meta property="og:title" content="Password Generator Challenge" />
+    <meta property="og:image" content="https://trunten.github.io/fm-password-generator/assets/images/application-screenshot.png" />
+    <meta property="og:description" content="Generate a random password the length of your choosing with a customisable set of characters that you can choose to match a website's password requirements." />
 </head>
 <body>
+    <noscript style="color:red;">JavaScript is required to enable functionailty.<br>Make sure you enable it in your browser settings.</noscript>
     <h1>Password Generator</h1>
     <div class="container">
         <div class="output">
@@ -30,6 +39,7 @@
             <input type="checkbox" name="special" id="hasSpecial">
             <label for="hasSpecial">Include Symbols</label>
             <button>Generate
+                <!-- Right Arrow -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 -3 24 24">
                     <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
                 </svg>
