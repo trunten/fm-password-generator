@@ -112,7 +112,7 @@ for (el of checkboxes) {
     };
 }
 if (!anySelected) {
-    showPopup("Select at least one option");
+    showPopup("Select at least one character option");
     return false;
 } else {
     options.length = length;

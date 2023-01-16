@@ -132,8 +132,8 @@ h1 {
 /* Stlying for popup dialog */
 #popup {
     visibility: hidden;
-    width: 210px; 
-    margin-left: -105px; 
+    width: 220px; 
+    margin-left: -110px; 
     background-color: black;
     color: #fff; 
     text-align: center; 
@@ -147,21 +147,20 @@ h1 {
     transition: all 0.5s ease-in-out;
   }
   
-  #popup.show {
+#popup.show {
     visibility: visible;
     opacity: 0.9;
     transition: all 0.7s ease-in-out;
-  }
-  
-  .pulse {animation: pulse 2s ;}
-  
-  /* https://codepen.io/FlorinPop17/pen/drJJzK */
-  @keyframes pulse {
-      0% {
-          text-shadow: 0 0 20px white;
-      }
-      
-      100% {
-          text-shadow: 0 0 0 black;
-      }
-  }
+}
+
+.pulse { animation: pulse 2s; }
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 20px white;
+    }
+    
+    100% {
+        text-shadow: 0 0 0 black;
+    }
+}
