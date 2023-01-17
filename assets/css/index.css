@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
+/* Basic Reset */
 * {
     margin: 0;
 }
@@ -8,21 +9,42 @@
     box-sizing: border-box;
 }
 
-form, .output {
+/* General styling */
+body {
+    padding-top: 20px;
+    background-color: black;
     display: grid;
-    align-items: center;
-    background-color: rgb(36 35 43);
-    padding: 20px;
-    margin: 10px 0;
-    row-gap: 1rem;
+    place-content: start center;
+    min-width: 100vw;
+    min-height: 100vh;
+    color: white;
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
 }
 
+@media screen and (min-width: 500px) {
+    body {
+        place-content: center center;
+        padding-top: 0;
+    }
+}
+
+/* Site container */
+.container {
+    margin: 0 auto;
+    width: 360px;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(119, 120, 145);
+}
+
+/* Password output */
 .output {
     position: relative;
-}
-
-form {
-    grid-template-columns: 30px 1fr;
 }
 
 .output, .form-group {
@@ -43,31 +65,40 @@ form {
     color: rgb(119, 120, 145);
 }
 
+/* Copy button */
+img {
+    cursor: pointer;
+    height: 25px;
+}
+
+img[data-disabled="false"] {
+    filter: invert(91%) sepia(17%) saturate(915%) hue-rotate(63deg) brightness(101%) contrast(101%);
+}
+
+/* Options form */
+form, .output {
+    display: grid;
+    align-items: center;
+    background-color: rgb(36 35 43);
+    padding: 20px;
+    margin: 10px 0;
+    row-gap: 1rem;
+}
+
+form {
+    grid-template-columns: 30px 1fr;
+    padding-inline: 30px;
+}
+
 input[type="range"], button, .form-group {
     grid-column: span 2;
 }
 
-input[type="range"] {
-    appearance: none;
-    height: 5px;
-    border-radius: 5px;
-    background-color: black;
-    color: transparent;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%; 
-    background: white;
-    cursor: pointer;
-  }
-
+/* Password length items */
 .form-group {
     display: grid;
     row-gap: 1rem;
-    padding: 0 20px 10px 10px;
+    padding: 0 20px 10px 0px;
     align-items: center;
 }
 
@@ -80,30 +111,26 @@ input[type="range"]::-webkit-slider-thumb {
     min-width: 50px;
 }
 
-.container {
-    margin: 0 auto;
-    width: 350px;
-}
-
-body {
+/* Range slider */
+input[type="range"] {
+    appearance: none;
+    height: 5px;
+    border-radius: 5px;
     background-color: black;
-    display: grid;
-    place-content: center center;
-    min-width: 100vw;
-    min-height: 100vh;
-    color: white;
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    color: transparent;
+    margin: 10px 0 5px;
 }
 
-img {
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: white;
     cursor: pointer;
-    height: 25px;
-}
+  }
 
-img[data-disabled="false"] {
-    filter: invert(91%) sepia(17%) saturate(915%) hue-rotate(63deg) brightness(101%) contrast(101%);
-}
-
+/* Generate button */
 button, button:active {
     appearance: none;
     min-height: 2.8rem;
@@ -115,9 +142,11 @@ button, button:active {
     cursor: pointer;
     font-weight: 900;
     color: black;
+    margin-top: 10px;
+    font-size: 0.9rem;
 }
 
-@media (hover: hover) {
+@media (hover: hover) { /* Only have hover state on none mobile devices*/
     button:hover {
         appearance: none;
         background-color: rgb(18, 136, 32);
@@ -125,12 +154,6 @@ button, button:active {
     }
 }
 
-h1 {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    color: rgb(119, 120, 145);
-}
 
 /* Stlying for popup dialog */
 #popup {
@@ -156,6 +179,7 @@ h1 {
     transition: all 0.7s ease-in-out;
 }
 
+/* Pulse animation */
 .pulse { animation: pulse 2s; }
 
 @keyframes pulse {
