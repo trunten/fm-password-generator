@@ -1,92 +1,23 @@
 // Array of special characters to be included in password
 const specialCharacters = [
-    '@',
-    '%',
-    '+',
-    '\\',
-    '/',
-    "'",
-    '!',
-    '#',
-    '$',
-    '^',
-    '?',
-    ':',
-    ',',
-    ')',
-    '(',
-    '}',
-    '{',
-    ']',
-    '[',
-    '~',
-    '-',
-    '_',
-    '.'
+    "@",  "%",  "+",  "\\",  "/",  "'",  "!",  "#",  "$",  "^",  "?", 
+     ":",  ",",  ")", "(",  "}",  "{",  "]",  "[",  "~",  "-",  "_",  ".",
   ];
   
-// Array of numeric characters to be included in password
-const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-// Array of lowercase characters to be included in password
-const lowerCasedCharacters = [
-'a',
-'b',
-'c',
-'d',
-'e',
-'f',
-'g',
-'h',
-'i',
-'j',
-'k',
-'l',
-'m',
-'n',
-'o',
-'p',
-'q',
-'r',
-'s',
-'t',
-'u',
-'v',
-'w',
-'x',
-'y',
-'z'
-];
-
-// Array of uppercase characters to be included in password
-const upperCasedCharacters = [
-'A',
-'B',
-'C',
-'D',
-'E',
-'F',
-'G',
-'H',
-'I',
-'J',
-'K',
-'L',
-'M',
-'N',
-'O',
-'P',
-'Q',
-'R',
-'S',
-'T',
-'U',
-'V',
-'W',
-'X',
-'Y',
-'Z'
-];
+  // Array of numeric characters to be included in password
+  const numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  
+  // Array of lowercase characters to be included in password
+  const lowerCasedCharacters = [
+    "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l",  "m",  
+    "n",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z",
+  ];
+  
+  // Array of uppercase characters to be included in password
+  const upperCasedCharacters = [
+    "A",  "B",  "C",  "D",  "E",  "F",  "G",  "H",  "I",  "J",  "K",  "L",  "M",
+    "N",  "O",  "P",  "Q",  "R",  "S",  "T",  "U",  "V",  "W",  "X",  "Y",  "Z",
+  ];
 
 const charsets = {
 upperCase: upperCasedCharacters,
@@ -112,7 +43,7 @@ for (el of checkboxes) {
     };
 }
 if (!anySelected) {
-    showPopup("Select at least one character option");
+    showPopup("Select at least one character option", 2500);
     return false;
 } else {
     options.length = length;
@@ -177,11 +108,12 @@ function copyPassword() {
     }
 }
 
-function showPopup(text) {
+function showPopup(text, delay) {
+    if (!delay) { delay = 1500; }
     if (timeout) { clearTimeout(timeout); }
     if (text) { popup.textContent = text } else { popup.textContent = "Copied to clipboard"}
     popup.classList.add("show");
-    timeout = setTimeout(function(){ popup.classList.remove("show"); timeout = false;}, 1500);
+    timeout = setTimeout(function(){ popup.classList.remove("show"); timeout = false;}, delay);
 }
   
 // Add event listener to generate and copy to clipboard buttons
