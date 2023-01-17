@@ -59,6 +59,7 @@ h1 {
     border: none;
     color: white;
     word-break: break-all;
+    letter-spacing: 0.1rem;
 }
 
 .output div[data-placeholder="true"] {
