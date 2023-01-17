@@ -102,13 +102,31 @@ input[type="range"], button, .form-group {
     align-items: center;
 }
 
-.form-group p {
+.form-group input[type="number"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     border: none;
     color: rgb(164 255 175);
     background: rgb(36 35 43);
     font-size: 1.5rem;
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     min-width: 50px;
+    height: 2.5rem;
+    text-align: center;
+}
+
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    /* Hide scroll buttons on Chrome, Safari, Edge, Opera */
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input[type="number"]:focus{
+    outline: none;
+    background-color: rgb(56, 56, 56);
+    box-shadow: 0px 0px 2px 0px #fff;
 }
 
 /* Range slider */

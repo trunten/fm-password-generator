@@ -122,7 +122,35 @@ copyBtn.addEventListener('click', copyPassword);
 
 // Update length on slider change
 document.querySelector("#length").oninput = function() {
-    document.querySelector("#lengthValue").textContent = this.value;
+    document.querySelector("#lengthValue").value = this.value;
 };
+
+// Update slider on length change
+document.querySelector("#lengthValue").oninput = function() {
+    const slider = document.querySelector("#length");
+    if (this.value < MIN_LENGTH) {
+        this.style.color = "red";
+        slider.value = MIN_LENGTH;
+    } else if (this.value > MAX_LENGTH) {
+        this.style.color = "red";
+        slider.value = MAX_LENGTH;
+    } else {
+        this.style.color = "";
+        slider.value = this.value;
+    }
+};
+
+// Update slider on length change
+document.querySelector("#lengthValue").onchange = function() {
+    if (this.value < MIN_LENGTH) {
+        this.value = MIN_LENGTH;
+        this.style.color = "";
+    } else if (this.value > MAX_LENGTH) {
+        this.value = MAX_LENGTH;
+        this.style.color = "";
+    }
+};
+
+
 
   
