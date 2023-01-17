@@ -58,7 +58,7 @@ h1 {
     background-color: transparent;
     border: none;
     color: white;
-    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .output div[data-placeholder="true"] {
