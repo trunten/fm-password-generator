@@ -203,6 +203,11 @@ button, button:active {
     transition: all 0.7s ease-in-out;
 }
 
+/* Red text */
+.red-text {
+    color: red !important;
+}
+
 /* Pulse animation */
 .pulse { animation: pulse 2s; }
 
