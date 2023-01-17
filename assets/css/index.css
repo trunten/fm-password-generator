@@ -47,7 +47,7 @@ h1 {
     position: relative;
 }
 
-.output, .form-group {
+.output {
     grid-template-columns: 85% 15%;
     column-gap: 1rem;
 }
@@ -96,6 +96,11 @@ input[type="range"], button, .form-group {
 
 /* Password length items */
 .form-group {
+    grid-template-columns: 80% 20%;
+    column-gap: 1rem;
+}
+
+.form-group {
     display: grid;
     row-gap: 1rem;
     padding: 0 20px 10px 0px;
@@ -113,6 +118,7 @@ input[type="range"], button, .form-group {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     min-width: 50px;
     height: 2.5rem;
+    width: 4.5ch;
     text-align: center;
 }
 

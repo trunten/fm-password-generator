@@ -122,6 +122,7 @@ copyBtn.addEventListener('click', copyPassword);
 
 // Update length on slider change
 document.querySelector("#length").oninput = function() {
+    this.style.color = "";
     document.querySelector("#lengthValue").value = this.value;
 };
 
