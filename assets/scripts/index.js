@@ -85,6 +85,7 @@ let timeout;
 // Write password to the #password input
 function writePassword(e) {
     e.preventDefault();
+    popup.classList.remove("show");
     var password = generatePassword();
     if (password) {
         var passwordText = document.querySelector('#password');
