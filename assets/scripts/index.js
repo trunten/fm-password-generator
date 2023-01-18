@@ -162,7 +162,23 @@ lengthInput.onchange = function() {
 
 // Select all text when clicking on length input field
 lengthInput.onclick = function() {
-    this.select();
+    const len = this.value.length;
+    //  Number fields don't support text selection so turn to a text field to enable
+    this.type = 'text';
+    if (this.setSelectionRange) {
+        this.focus();
+        this.setSelectionRange(len, len);
+    } else if (this.createTextRange) {
+        const tr = this.createTextRange();
+        tr.collapse(true);
+        tr.moveEnd('character', len);
+        tr.moveStart('character', len);
+        tr.select();
+    } else {
+        this.select();
+    }
+    // Turn the field back to a number now we're done
+    this.type = 'number';
 };
 
 

@@ -2,7 +2,7 @@
 
 /* Variables */
 :root {
-    --accent-colour: rgb(164 255 175);
+    --accent-colour: rgb(163, 255, 174);
     --primary-colour: rgb(255,255,255);
     --seconday-colour: rgb(119, 120, 145);
     --bg-colour: rgb(36 35 43);
@@ -114,7 +114,8 @@ input[type="range"], button, .form-group {
 }
 
 input[type="checkbox"] {
-    accent-color: var(--accent-colour);
+    /* accent-color: var(--accent-colour); */
+    accent-color: rgb(74, 206, 89);
 }
 
 /* Password length items */
