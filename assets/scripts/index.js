@@ -163,6 +163,7 @@ lengthInput.onchange = function() {
 // Select all text when clicking on length input field
 lengthInput.onclick = function() {
     if (/android|iphone|kindle|ipad/i.test(navigator.userAgent) && this.setSelectionRange) {
+        // Mobile only because select gives me that stupid copy/paste popup
         const len = this.value.length;
         // Number fields don't support text selection so turn to a text field to enable
         this.type = 'text';
@@ -173,6 +174,7 @@ lengthInput.onclick = function() {
         // Turn the field back to a number now we're done
         this.type = 'number';
     } else {
+        // Fine everywhere else
         this.select();
     }
 };
