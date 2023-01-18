@@ -114,8 +114,14 @@ input[type="range"], button, .form-group {
 }
 
 input[type="checkbox"] {
-    /* accent-color: var(--accent-colour); */
-    accent-color: rgb(74, 206, 89);
+    /* This was too bright on mobile */
+    /* background-color: transparent; */
+    accent-color: var(--accent-colour); 
+
+    /* Slightly darker versions*/
+    /* accent-color: rgb(74, 206, 89); */
+    accent-color: rgb(141, 222, 150)
+    
 }
 
 /* Password length items */
