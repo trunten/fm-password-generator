@@ -118,19 +118,26 @@ function showPopup(text, delay) {
 }
   
 // Add event listener to generate and copy to clipboard buttons
-generateBtn.addEventListener('click', writePassword);
-copyBtn.addEventListener('click', copyPassword);
+generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyPassword);
+document.querySelector('#password').addEventListener("click", copyPassword);
+
+// =======================
+// Password length fields
+// =======================
+
+//Set reference to slider and length input fields
+const slider = document.querySelector("#length");
+const lengthInput = document.querySelector("#lengthValue")
 
 // Update length on slider change
-document.querySelector("#length").oninput = function() {
-    const length = document.querySelector("#lengthValue")
-    length.classList.remove("red-text");
-    length.value = this.value;
+slider.oninput = function() {
+    lengthInput.classList.remove("red-text");
+    lengthInput.value = this.value;
 };
 
 // Update slider on length change
-document.querySelector("#lengthValue").oninput = function() {
-    const slider = document.querySelector("#length");
+lengthInput.oninput = function() {
     if (this.value < MIN_LENGTH) {
         this.classList.add("red-text");
         slider.value = MIN_LENGTH;
@@ -144,13 +151,18 @@ document.querySelector("#lengthValue").oninput = function() {
 };
 
 // Update slider on length change
-document.querySelector("#lengthValue").onchange = function() {
+lengthInput.onchange = function() {
     if (this.value < MIN_LENGTH) {
         this.value = MIN_LENGTH;
     } else if (this.value > MAX_LENGTH) {
         this.value = MAX_LENGTH;
     }
     this.classList.remove("red-text");
+};
+
+// Select all text when clicking on length input field
+lengthInput.onclick = function() {
+    this.select();
 };
 
 

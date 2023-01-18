@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
+/* Variables */
+:root {
+    --accent-colour: rgb(164 255 175);
+    --primary-colour: rgb(255,255,255);
+    --seconday-colour: rgb(119, 120, 145);
+    --bg-colour: rgb(36 35 43);
+}
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -17,7 +25,7 @@ body {
     place-content: start center;
     min-width: 100vw;
     min-height: 100vh;
-    color: white;
+    color: var(--primary-colour);
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
 }
 
@@ -39,7 +47,7 @@ h1 {
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    color: rgb(119, 120, 145);
+    color: var(--seconday-colour);
 }
 
 /* Password output */
@@ -57,30 +65,40 @@ h1 {
     font-size: 1.5rem;
     background-color: transparent;
     border: none;
-    color: white;
+    color: var(--primary-colour);
     word-break: break-all;
     letter-spacing: 0.1rem;
 }
 
 .output div[data-placeholder="true"] {
-    color: rgb(119, 120, 145);
+    color: var(--seconday-colour);
+}
+
+.output div[data-placeholder="false"] {
+    cursor: pointer;
 }
 
 /* Copy button */
-img {
+#copy {
     cursor: pointer;
     height: 25px;
 }
 
-img[data-disabled="false"] {
+#copy[data-disabled="false"]  {
     filter: invert(91%) sepia(17%) saturate(915%) hue-rotate(63deg) brightness(101%) contrast(101%);
+}
+
+@media (hover: hover) { /* Only have hover state on none mobile devices*/
+    #copy[data-disabled="false"]:hover {
+        scale: 1.1;
+    }
 }
 
 /* Options form */
 form, .output {
     display: grid;
     align-items: center;
-    background-color: rgb(36 35 43);
+    background-color: var(--bg-colour);
     padding: 20px;
     margin: 10px 0;
     row-gap: 1rem;
@@ -93,6 +111,10 @@ form {
 
 input[type="range"], button, .form-group {
     grid-column: span 2;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent-colour);
 }
 
 /* Password length items */
@@ -113,8 +135,8 @@ input[type="range"], button, .form-group {
     -webkit-appearance: none;
     appearance: none;
     border: none;
-    color: rgb(164 255 175);
-    background: rgb(36 35 43);
+    color: var(--accent-colour);
+    background: var(--bg-colour);
     font-size: 1.5rem;
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     min-width: 50px;
@@ -151,7 +173,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
     border-radius: 50%; 
-    background: white;
+    background: var(--primary-colour);
     cursor: pointer;
   }
 
@@ -161,7 +183,7 @@ button, button:active {
     min-height: 2.8rem;
     text-transform: uppercase;
     border: none;
-    background-color: rgb(163, 255, 174);
+    background-color: var(--accent-colour);
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     vertical-align: middle;
     cursor: pointer;
@@ -186,7 +208,7 @@ button, button:active {
     width: 220px; 
     margin-left: -110px; 
     background-color: black;
-    color: #fff; 
+    color: var(--primary-colour); 
     text-align: center; 
     border-radius: 5px; 
     padding: 16px; 
@@ -214,10 +236,10 @@ button, button:active {
 
 @keyframes pulse {
     0% {
-        text-shadow: 0 0 20px white;
+        text-shadow: 0 0 20px var(--primary-colour);
     }
     
     100% {
-        text-shadow: 0 0 0 black;
+        text-shadow: 0 0 0 var(--bg-colour);
     }
 }
